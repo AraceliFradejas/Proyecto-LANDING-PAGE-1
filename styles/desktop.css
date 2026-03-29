@@ -1,0 +1,435 @@
+/* ========================================
+   VARIABLES CSS
+   ======================================== */
+:root {
+    --celeste: #c1e7ff;
+    --ceruleo: #007BA7;
+    --azul-marino: #003366;
+    --negro: #000000;
+    --gris-oscuro: #333333;
+    --blanco: #ffffff;
+    --text-color: var(--blanco);
+    --accent-color: var(--ceruleo);
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.8rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+
+    --font-main: 'Arial', sans-serif;
+    --font-size-sm: 0.9rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.1rem;
+    --font-size-lg: 1.2rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.5rem;
+    --font-size-hero: 3rem;
+
+    --radius-sm: 4px;
+    --radius-md: 5px;
+    --radius-lg: 8px;
+    --radius-xl: 10px;
+
+    --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-card-hover: 0 8px 12px rgba(0, 0, 0, 0.2);
+
+    --max-width: 1200px;
+}
+
+/* ========================================
+   RESET Y BASE
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--celeste);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ========================================
+   BOTÓN REUTILIZABLE
+   ======================================== */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-sm) 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--blanco);
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--azul-marino);
+    color: var(--blanco);
+}
+
+/* ========================================
+   HEADER Y NAVEGACIÓN
+   ======================================== */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--azul-marino);
+    padding: var(--spacing-md);
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.nav-list a:hover {
+    color: var(--celeste);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    z-index: 1;
+    padding: var(--spacing-lg);
+}
+
+.hero-content h1 {
+    font-size: var(--font-size-hero);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-content p {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-content .btn {
+    font-size: var(--font-size-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+}
+
+/* ========================================
+   PRODUCTOS
+   ======================================== */
+.productos {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    text-align: center;
+    background-color: var(--celeste);
+}
+
+.productos h2 {
+    font-size: var(--font-size-xl);
+    color: var(--azul-marino);
+    margin-bottom: 1.5rem;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.producto-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blanco);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.producto-card:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+
+.producto-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--ceruleo);
+}
+
+.producto-info {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.producto-info h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+    color: var(--azul-marino);
+}
+
+.producto-info p {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-md);
+    color: var(--ceruleo);
+}
+
+/* ========================================
+   SOBRE NOSOTROS
+   ======================================== */
+.about-us {
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    color: var(--blanco);
+    text-align: center;
+    background-color: var(--azul-marino);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-xl);
+}
+
+.about-content h2 {
+    font-size: var(--font-size-xxl);
+    margin-bottom: 1.5rem;
+    color: var(--blanco);
+}
+
+.about-content p {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--blanco);
+}
+
+/* ========================================
+   NEWSLETTER / CONTACTO
+   ======================================== */
+.newsletter {
+    background-color: var(--celeste);
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.newsletter h2 {
+    font-size: var(--font-size-xl);
+    color: var(--azul-marino);
+    margin-bottom: var(--spacing-md);
+}
+
+.newsletter p {
+    font-size: var(--font-size-lg);
+    color: var(--azul-marino);
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form label {
+    display: none;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--azul-marino);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background-color: var(--negro);
+    color: var(--blanco);
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.footer-social {
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-social p {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xs);
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-copy {
+    font-size: var(--font-size-base);
+    margin-top: var(--spacing-md);
+    opacity: 0.8;
+}
+
+.footer-disclaimer {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1.5rem var(--spacing-lg);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+.footer-disclaimer p {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: var(--spacing-md);
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px)
+   ======================================== */
+@media screen and (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .nav-list {
+        gap: var(--spacing-md);
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: var(--font-size-base);
+    }
+
+    .about-content h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .about-content p {
+        font-size: var(--font-size-base);
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MÓVIL (480px)
+   ======================================== */
+@media screen and (max-width: 480px) {
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-xs);
+    }
+
+    .nav-list a {
+        font-size: var(--font-size-sm);
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content .btn {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .about-content {
+        padding: var(--spacing-md);
+    }
+
+    .footer-disclaimer {
+        padding: var(--spacing-md);
+    }
+}
